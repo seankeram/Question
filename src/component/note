@@ -1,0 +1,61 @@
+     What is the difference between == and === in JavaScript?
+
+== is used for loose equality comparison, while === is used for strict equality comparison.
+How do you declare a variable in JavaScript?
+
+You can declare a variable using the var, let, or const keywords.
+What is a callback function in JavaScript?
+
+A callback function is a function that is passed as an argument to another function and is executed after the completion of that function.
+How do you loop through an array in JavaScript?
+
+You can loop through an array using a for loop, forEach method, or for...of loop.
+What is the difference between let and var in JavaScript?
+
+let is block-scoped, while var is function-scoped.
+What is the purpose of the document object in JavaScript?
+
+The document object represents the HTML document in the browser and provides methods and properties for interacting with it.
+How do you create an object in JavaScript?
+
+You can create an object using object literal notation, constructor functions, or the class syntax.
+What is the difference between null and undefined in JavaScript?
+
+null represents the intentional absence of a value, while undefined represents the absence of a value that has not been assigned.
+How do you handle errors in JavaScript?
+
+You can use try...catch blocks to handle errors in JavaScript.
+What is the difference between synchronous and asynchronous code in JavaScript?
+
+Synchronous code is executed sequentially, while asynchronous code allows for non-blocking operations and can be executed simultaneously.
+javabe kutah tar mikham
+What is a variable in JavaScript?
+
+A variable is a container for storing data values in JavaScript.
+How do you comment out code in JavaScript?
+
+You can comment out code in JavaScript using // for single-line comments or /* */ for multi-line comments.
+What is the difference between let, const, and var in JavaScript?
+
+let and const are block-scoped, while var is function-scoped. const is used for declaring constants that cannot be reassigned.
+How do you check the type of a variable in JavaScript?
+
+You can use the typeof operator to check the type of a variable in JavaScript.
+How do you convert a string to a number in JavaScript?
+
+You can use the parseInt or parseFloat functions to convert a string to a number in JavaScript.
+What is the difference between null and undefined in JavaScript?
+
+null is an intentional absence of value, while undefined means a variable has been declared but not assigned a value.
+How do you create a function in JavaScript?
+
+You can create a function using the function keyword followed by the function name and parameters.
+How do you add an event listener to an HTML element in JavaScript?
+
+You can use the addEventListener method to add an event listener to an HTML element in JavaScript.
+How do you loop through an object in JavaScript?
+
+You can use a for...in loop to loop through the properties of an object in JavaScript.
+What is the difference between == and === in JavaScript?
+
+== is used for loose equality comparison, while === is used for strict equality comparison, which checks both value and type.

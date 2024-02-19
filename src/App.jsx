@@ -1,9 +1,9 @@
-import BoxQues from "./component/boxQues";
+import QuestionBox from "./component/questionBox";
 
 function App() {
   return (
     <>
-      <BoxQues></BoxQues>
+      <QuestionBox></QuestionBox>
     </>
   );
 }
