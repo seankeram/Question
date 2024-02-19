@@ -8,10 +8,6 @@ const QuestionBox = () => {
         <div className="border-spacing-1 border-solid bg-slate-50 w-80 h-96 rounded-lg shadow-sm p-4">
           <Question></Question>
           <Answer></Answer>
-          <Answer></Answer>
-          <Answer></Answer>
-          <Answer></Answer>
-          <Answer></Answer>
         </div>
       </div>
     </>

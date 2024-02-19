@@ -1,12 +1,55 @@
+import { Button } from "@mui/material";
 const Answer = () => {
+  const answerList = [
+    "You can loop through an array using a for loop, forEach method,",
+    "let is block-scoped, while var is function-scoped.",
+    "Synchronous code is executed sequentially, while .    ",
+    "You can use the parseInt or parseFloat",
+  ];
+  const correct = [
+    "You can declare a variable using the var, let, or const keywords.",
+  ];
   return (
-    <div
-      className="border-spacing-1 border-solid bg-slate-400 w-72 h-7 rounded-lg shadow-sm p-4 mt-4 flex
-       items-center "
-    >
-      <div className="  text-[10px] text-slate-50">
-        == is used for loose equality comparison, while === is used for strict
-        equality comparison.
+    <div>
+      <div>
+        {answerList.map((ques, id) => {
+          return (
+            <Button
+              size="small"
+              variant="contained"
+              disableElevati
+              style={{
+                textTransform: "none",
+                fontSize: "10px",
+                marginTop: "15px",
+                height: "40px",
+                width: "288px",
+                display: "flex",
+                justifyContent: "center",
+              }}
+              key={id}
+            >
+              {ques}
+            </Button>
+          );
+        })}
+
+        <Button
+          size="small"
+          variant="contained"
+          disableElevati
+          style={{
+            textTransform: "none",
+            fontSize: "10px",
+            marginTop: "15px",
+            height: "40px",
+            width: "288px",
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          {correct}
+        </Button>
       </div>
     </div>
   );
