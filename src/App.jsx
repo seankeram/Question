@@ -1,7 +1,9 @@
+import BoxQues from "./component/boxQues";
+
 function App() {
   return (
     <>
-      <div className=""></div>
+      <BoxQues></BoxQues>
     </>
   );
 }
