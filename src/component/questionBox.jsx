@@ -14,7 +14,7 @@ const QuestionBox = () => {
       <div className=" flex items-center justify-center p-4 ">
         <div className="border-spacing-1 border-solid bg-slate-50 w-80 h-96 rounded-lg shadow-sm p-4">
           <Question count={count}></Question>
-          <Answer onClick={handleClick}></Answer>
+          <Answer onClick={handleClick} count={count}></Answer>
         </div>
       </div>
     </>

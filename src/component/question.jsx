@@ -1,7 +1,6 @@
 import { Typography } from "@mui/material";
 
 const Question = ({ count }) => {
-  console.log(count);
   const questionList = [
     {
       id: 1,
