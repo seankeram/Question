@@ -1,6 +1,5 @@
 import { useState } from "react";
-import Answer from "./answer";
-import Question from "./question";
+import QuesList from "./QuesList";
 
 const QuestionBox = () => {
   const [count, setCount] = useState(1);
@@ -10,14 +9,14 @@ const QuestionBox = () => {
   };
 
   return (
-    <>
-      <div className=" flex items-center justify-center p-4 ">
-        <div className="border-spacing-1 border-solid bg-slate-50 w-80 h-96 rounded-lg shadow-sm p-4">
-          <Question count={count}></Question>
-          <Answer onClick={handleClick} count={count}></Answer>
+    <div className="h-[820px]">
+      <div className=" flex items-center justify-center p-4 h-full">
+        <div className="border-spacing-1 border-solid bg-slate-50  rounded-lg shadow-sm p-4 h-full w-full">
+          {/* <MotionBar></MotionBar> */}
+          <QuesList onClick={handleClick} count={count}></QuesList>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
