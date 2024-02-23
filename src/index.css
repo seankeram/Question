@@ -1,12 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-Button {
-     display: flex;
-     justify-content: center;
-     width: 100%;
-     height: 64px;
-     margin-top: 30px;
-     font-Size: "17px";
-}
