@@ -1,7 +1,6 @@
 import { Box, Button, Typography } from "@mui/material";
 const QuesList = (props) => {
   const { onClick, count, result, wrong } = props;
-  console.log(result);
 
   const answerList = [
     {
@@ -202,7 +201,14 @@ const QuesList = (props) => {
   if (count === 11) {
     return (
       <>
-        <Typography sx={{ fontWeight: "bold" }}>
+        <Typography
+          sx={{
+            fontWeight: "bold",
+            padding: 5,
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
           The result of the question
         </Typography>
         <Typography sx={{ width: "100%" }}>
@@ -211,7 +217,7 @@ const QuesList = (props) => {
               width: "100%",
               gap: 10,
               height: 50,
-              bgcolor: "success.main",
+              bgcolor: "#a2cf6e",
               borderRadius: 5,
               textTransform: "none",
               alignItems: "center",
@@ -230,7 +236,7 @@ const QuesList = (props) => {
               width: "100%",
               gap: 10,
               height: 50,
-              bgcolor: "red",
+              bgcolor: "#ff7474",
               borderRadius: 5,
               textTransform: "none",
               alignItems: "center",
@@ -255,8 +261,13 @@ const QuesList = (props) => {
             ?.filter((item) => item?.id === count)
             .map((question) => {
               return (
-                <div size="small" key={question.id}>
-                  <Typography variant="h4" color="initial" padding={2}>
+                <Box size="small" key={question.id}>
+                  <Typography
+                    variant="h4"
+                    color="initial"
+                    padding={2}
+                    paddingY={5}
+                  >
                     Question
                   </Typography>
                   <Typography
@@ -311,7 +322,7 @@ const QuesList = (props) => {
                       </>
                     );
                   })}
-                </div>
+                </Box>
               );
             })}
         </Box>

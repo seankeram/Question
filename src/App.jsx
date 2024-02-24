@@ -8,7 +8,6 @@ function App() {
       correct: [],
     },
   ];
-  console.log(questionList[0].answers);
 
   return (
     <>

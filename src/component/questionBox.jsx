@@ -30,8 +30,25 @@ const QuestionBox = () => {
 
   return (
     <Box sx={{ height: "100vh" }}>
-      <Box className=" flex items-center justify-center p-4 h-full">
-        <Box className="border-spacing-1 border-solid bg-slate-50  rounded-lg shadow-sm p-4 h-full w-full">
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: 3,
+          height: "100%",
+        }}
+      >
+        <Box
+          sx={{
+            bgcolor: "#eeeeee",
+            borderRadius: 4,
+            boxShadow: 4,
+            padding: 3,
+            height: "100%",
+            width: "100%",
+          }}
+        >
           <MotionBar width={width}></MotionBar>
           <QuesList
             result={result}
