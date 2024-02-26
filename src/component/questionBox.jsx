@@ -9,6 +9,7 @@ const QuestionBox = () => {
   const [result, setResult] = useState(0);
   const [wrong, setWrong] = useState(0);
   const [width, setWidth] = useState(10);
+  const [animation, setAnimation] = useState(true);
 
   const correctList = () => {
     if (data?.answer?.isCorrect) {
@@ -17,15 +18,16 @@ const QuestionBox = () => {
       setWrong(wrong + 1);
     }
   };
+
   const handleClick = (id, answer) => {
     setData({
       id,
       answer,
     });
-    setWidth((prevWidth) => prevWidth + 10);
-
+    setWidth(width + 10);
     setCount(count + 1);
     correctList();
+    setAnimation(false);
   };
 
   return (
@@ -51,6 +53,7 @@ const QuestionBox = () => {
         >
           <MotionBar width={width}></MotionBar>
           <QuesList
+            animation={animation}
             result={result}
             wrong={wrong}
             onClick={handleClick}

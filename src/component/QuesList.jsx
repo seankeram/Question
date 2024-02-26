@@ -1,6 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
 const QuesList = (props) => {
   const { onClick, count, result, wrong } = props;
+  console.log(wrong);
 
   const answerList = [
     {
@@ -226,6 +227,7 @@ const QuesList = (props) => {
               fontWeight: "bold",
               display: "flex",
               justifyContent: "center",
+              filter: "drop-shadow(2px 4px 6px black)",
             }}
           >
             <Typography>Correct</Typography>
@@ -245,6 +247,7 @@ const QuesList = (props) => {
               fontWeight: "bold",
               display: "flex",
               justifyContent: "center",
+              filter: "drop-shadow(2px 4px 6px black)",
             }}
           >
             <Typography>wrong</Typography>
@@ -259,9 +262,9 @@ const QuesList = (props) => {
         <Box>
           {answerList
             ?.filter((item) => item?.id === count)
-            .map((question) => {
+            .map((question, index) => {
               return (
-                <Box size="small" key={question.id}>
+                <Box size="small" key={index.toString()}>
                   <Typography
                     variant="h4"
                     color="initial"
@@ -284,6 +287,7 @@ const QuesList = (props) => {
                       minHeight: "50px",
                       backgroundColor: "black",
                       borderRadius: 5,
+                      filter: "drop-shadow(2px 4px 6px black)",
                     }}
                   >
                     <Typography
@@ -315,6 +319,7 @@ const QuesList = (props) => {
                             width: "100%",
                             display: "flex",
                             justifyContent: "center",
+                            filter: "drop-shadow(2px 4px 6px black)",
                           }}
                         >
                           {answer.text}

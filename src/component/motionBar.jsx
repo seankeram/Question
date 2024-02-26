@@ -41,7 +41,6 @@ const MotionBar = ({ width }) => {
             width: `${width}%`,
             cursor: "pointer",
             opacity: 1,
-
             transition: "width 0.5s linear ", // Add transition property for smooth animation
           }}
         ></Box>
