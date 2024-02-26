@@ -1,21 +1,26 @@
 import { Box } from "@mui/material";
-import { useState } from "react";
+import React, { useState } from "react";
 import QuesList from "./QuesList";
 import MotionBar from "./motionBar";
 
+interface Answer {
+  id: number;
+  answer: string;
+}
+
 const QuestionBox = () => {
-  const [count, setCount] = useState(1);
-  const [data, setData] = useState();
-  const [result, setResult] = useState(0);
-  const [wrong, setWrong] = useState(0);
-  const [width, setWidth] = useState(10);
-  const [animation, setAnimation] = useState(true);
+  const [count, setCount] = useState<number>(1);
+  const [data, setData] = useState<Answer>();
+  const [result, setResult] = useState<number>(0);
+  const [wrong, setWrong] = useState<number>(0);
+  const [width, setWidth] = useState<number>(10);
+  const [animation, setAnimation] = useState<boolean>(true);
 
   const correctList = () => {
-    if (data?.answer?.isCorrect) {
-      setResult(result + 1);
+    if (data?.answer) {
+      setResult((result) => result + 1);
     } else {
-      setWrong(wrong + 1);
+      setWrong((wrong) => wrong + 1);
     }
   };
 

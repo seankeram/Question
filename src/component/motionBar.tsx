@@ -1,4 +1,5 @@
 import { Box } from "@mui/material";
+import React from "react";
 
 const MotionBar = ({ width }) => {
   if (width === 110) {
@@ -28,14 +29,14 @@ const MotionBar = ({ width }) => {
       <Box
         sx={{
           width: " 100%",
-          border: "solid",
+          border: "solid 2px  ",
           borderRadius: "16px",
           borderColor: "#2979ff",
+          marginBottom: 3,
         }}
       >
         <Box
           sx={{
-            boxShadow: 2,
             backgroundColor: "#2979ff",
             height: 10,
             width: `${width}%`,

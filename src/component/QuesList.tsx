@@ -1,7 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
+import React from "react";
 const QuesList = (props) => {
   const { onClick, count, result, wrong } = props;
-  console.log(wrong);
 
   const answerList = [
     {
@@ -208,6 +208,7 @@ const QuesList = (props) => {
             padding: 5,
             display: "flex",
             justifyContent: "center",
+            text: "capitalize",
           }}
         >
           The result of the question
@@ -227,7 +228,7 @@ const QuesList = (props) => {
               fontWeight: "bold",
               display: "flex",
               justifyContent: "center",
-              filter: "drop-shadow(2px 4px 6px black)",
+              filter: "drop-shadow(2px 4px 6px #757575)",
             }}
           >
             <Typography>Correct</Typography>
@@ -247,7 +248,7 @@ const QuesList = (props) => {
               fontWeight: "bold",
               display: "flex",
               justifyContent: "center",
-              filter: "drop-shadow(2px 4px 6px black)",
+              filter: "drop-shadow(2px 4px 6px #757575)",
             }}
           >
             <Typography>wrong</Typography>
@@ -262,74 +263,73 @@ const QuesList = (props) => {
         <Box>
           {answerList
             ?.filter((item) => item?.id === count)
-            .map((question, index) => {
-              return (
-                <Box size="small" key={index.toString()}>
+            .map((question, index) => (
+              <Box component={"section"} key={index.toString()}>
+                <Typography
+                  variant="h4"
+                  color="initial"
+                  padding={2}
+                  paddingY={5}
+                >
+                  Question
+                </Typography>
+                <Typography
+                  sx={{
+                    width: "100%",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    padding: 1,
+                    paddingX: 2,
+                    color: "lightgray",
+                    boxShadow: 3,
+                    height: "auto",
+                    minHeight: "50px",
+                    backgroundColor: "black",
+                    borderRadius: 5,
+                    filter: "drop-shadow(2px 4px 6px #757575)",
+                  }}
+                >
                   <Typography
-                    variant="h4"
-                    color="initial"
-                    padding={2}
-                    paddingY={5}
+                    component="p"
+                    key={question?.id}
+                    fontSize={13}
+                    fontWeight={"bold"}
                   >
-                    Question
+                    {question.ques}
                   </Typography>
-                  <Typography
-                    sx={{
-                      width: "100%",
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      padding: 1,
-                      paddingX: 2,
-                      color: "lightgray",
-                      boxShadow: 3,
-                      height: "auto",
-                      minHeight: "50px",
-                      backgroundColor: "black",
-                      borderRadius: 5,
-                      filter: "drop-shadow(2px 4px 6px black)",
-                    }}
-                  >
-                    <Typography
-                      fontSize={13}
-                      key={question}
-                      fontWeight={"bold"}
-                    >
-                      {question.ques}
-                    </Typography>
-                  </Typography>
+                </Typography>
 
-                  {question.title.map((answer) => {
-                    return (
-                      <>
-                        <Button
-                          key={answer.text}
-                          onClick={() => onClick(question.id, answer)}
-                          size="small"
-                          variant="contained"
-                          disableElevation
-                          sx={{
-                            minHeight: "50px",
-                            borderRadius: 5,
-                            textTransform: "none",
-                            fontSize: "13px",
-                            marginTop: "30px",
-                            fontWeight: "bold",
-                            height: "auto",
-                            width: "100%",
-                            display: "flex",
-                            justifyContent: "center",
-                            filter: "drop-shadow(2px 4px 6px black)",
-                          }}
-                        >
-                          {answer.text}
-                        </Button>
-                      </>
-                    );
-                  })}
-                </Box>
-              );
-            })}
+                {question.title.map((answer) => {
+                  return (
+                    <>
+                      <Button
+                        key={answer.text}
+                        onClick={() => onClick(question.id, answer)}
+                        size="small"
+                        variant="contained"
+                        disableElevation
+                        sx={{
+                          minHeight: "50px",
+                          borderRadius: 5,
+                          textTransform: "none",
+                          fontSize: "13px",
+                          marginTop: "30px",
+                          fontWeight: "bold",
+                          height: "auto",
+                          width: "100%",
+                          display: "flex",
+                          justifyContent: "center",
+                          filter: "drop-shadow(2px 4px 6px #757575)",
+                        }}
+                      >
+                        {answer.text}
+                      </Button>
+                    </>
+                  );
+                })}
+              </Box>
+            ))}
         </Box>
       </>
     );
