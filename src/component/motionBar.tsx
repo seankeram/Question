@@ -32,7 +32,6 @@ const MotionBar = ({ width }) => {
           border: "solid 2px  ",
           borderRadius: "16px",
           borderColor: "#2979ff",
-          marginBottom: 3,
         }}
       >
         <Box

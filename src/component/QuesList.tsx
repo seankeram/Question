@@ -269,7 +269,7 @@ const QuesList = (props) => {
                   variant="h4"
                   color="initial"
                   padding={2}
-                  paddingY={5}
+                  paddingY={4}
                 >
                   Question
                 </Typography>
@@ -305,7 +305,9 @@ const QuesList = (props) => {
                     <>
                       <Button
                         key={answer.text}
-                        onClick={() => onClick(question.id, answer)}
+                        onClick={() =>
+                          onClick(question.id, answer, answer.isCorrect)
+                        }
                         size="small"
                         variant="contained"
                         disableElevation

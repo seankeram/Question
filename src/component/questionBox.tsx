@@ -1,12 +1,25 @@
 import { Box } from "@mui/material";
-import React, { useState } from "react";
+import React, { useReducer, useState } from "react";
 import QuesList from "./QuesList";
 import MotionBar from "./motionBar";
 
 interface Answer {
   id: number;
   answer: string;
+  isCorrect: boolean;
 }
+interface adding {
+  id: number;
+  answer: string;
+}
+
+const reducer = (state, action) => {
+  if (action.type === "TOGGLE_ANIMATION") {
+    return false;
+  } else {
+    return state;
+  }
+};
 
 const QuestionBox = () => {
   const [count, setCount] = useState<number>(1);
@@ -15,24 +28,41 @@ const QuestionBox = () => {
   const [wrong, setWrong] = useState<number>(0);
   const [width, setWidth] = useState<number>(10);
   const [animation, setAnimation] = useState<boolean>(true);
+  const [isOpen, setIsOpen] = useReducer(reducer, false);
+  const [add, setAdd] = useState<adding>();
+  console.log(isOpen);
 
   const correctList = () => {
-    if (data?.answer) {
+    if (data?.isCorrect) {
       setResult((result) => result + 1);
     } else {
       setWrong((wrong) => wrong + 1);
     }
   };
 
-  const handleClick = (id, answer) => {
+  const handleClick = (id: number, answer: string, isCorrect: boolean) => {
+    const newAdding = {
+      answer: answer,
+      id: Number,
+      isCorrect: Boolean,
+    };
+
+    setAdd((prevAdd: any): any => {
+      return [...(prevAdd || []), newAdding];
+    });
+
     setData({
       id,
       answer,
+      isCorrect,
     });
-    setWidth(width + 10);
-    setCount(count + 1);
+
+    setWidth((prevWidth) => prevWidth + 10);
+    setCount((prevCount) => prevCount + 1);
     correctList();
     setAnimation(false);
+
+    setIsOpen({ type: "TOGGLE_ANIMATION" });
   };
 
   return (
