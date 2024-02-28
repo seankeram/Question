@@ -1,8 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
 import React from "react";
 const QuesList = (props) => {
-  const { onClick, count, result, wrong } = props;
-
+  const { onClick, count, result, wrong, addAnswer } = props;
   const answerList = [
     {
       id: 1,
@@ -255,6 +254,7 @@ const QuesList = (props) => {
             {wrong}
           </Box>
         </Typography>
+        {/* <AnswerListItem addAnswer={addAnswer} /> */}
       </>
     );
   } else {

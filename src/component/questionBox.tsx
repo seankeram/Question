@@ -29,8 +29,7 @@ const QuestionBox = () => {
   const [width, setWidth] = useState<number>(10);
   const [animation, setAnimation] = useState<boolean>(true);
   const [isOpen, setIsOpen] = useReducer(reducer, false);
-  const [add, setAdd] = useState<adding>();
-  console.log(isOpen);
+  const [addAnswer, setAddAnswer] = useState<adding>();
 
   const correctList = () => {
     if (data?.isCorrect) {
@@ -47,7 +46,7 @@ const QuestionBox = () => {
       isCorrect: Boolean,
     };
 
-    setAdd((prevAdd: any): any => {
+    setAddAnswer((prevAdd: any): any => {
       return [...(prevAdd || []), newAdding];
     });
 
@@ -88,6 +87,7 @@ const QuestionBox = () => {
         >
           <MotionBar width={width}></MotionBar>
           <QuesList
+            addAnswer={addAnswer}
             animation={animation}
             result={result}
             wrong={wrong}
