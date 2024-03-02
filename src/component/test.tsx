@@ -32,5 +32,6 @@ function IncrementDecrement() {
   );
 }
 
+export default IncrementDecrement;
 // const [isopen, setisopen] = useReducer((state) => !state, fals);
 // setisopen;
